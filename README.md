@@ -1,6 +1,6 @@
 # f1-game-telemetry
 
-Tool for saving the F1 (2021) Game telemetry data. 
+Tool for visualizing and storing real-time telemetry data for the F1 Game (2021). 
 
 > Early stage project.
 
