@@ -1,0 +1,42 @@
+version: "3.9"
+services:
+  f1-telemetry:
+    build: .
+    env_file:
+      - .env
+    ports:
+      - "20777:20777"
+  influxdb:
+    image: influxdb:latest
+    container_name: influxdb
+    ports:
+      - "8083:8083"
+      - "8086:8086"
+      - "8090:8090"
+      - "2003:2003"
+    environment: 
+      - INFLUXDB_DATA_ENGINE=tsm1
+      - INFLUXDB_REPORTING_DISABLED=false
+      - INFLUXDB_GRAPHITE_0_ENABLED=true
+      - INFLUXDB_GRAPHITE_0_DATABASE=graphite
+      - INFLUXDB_GRAPHITE_0_BIND_ADDRESS=:2003
+      - INFLUXDB_GRAPHITE_PROTOCOL=tcp
+      - INFLUXDB_GRAPHITE_BATCH_SIZE=1000
+    volumes:
+      # Data persistency
+      # sudo mkdir -p /srv/docker/influxdb/data
+      - ./srv/influxdb/data:/var/lib/influxdb
+
+  # grafana:
+  #   image: grafana/grafana:latest
+  #   container_name: grafana
+  #   ports:
+  #     - "3000:3000"
+  #   environment:
+  #     - GF_INSTALL_PLUGINS=grafana-clock-panel,briangann-gauge-panel,natel-plotly-panel,grafana-simple-json-datasource
+
+  #   #user: "0"
+  #   volumes:
+  #     # Data persistency
+  #     # sudo mkdir -p /srv/docker/grafana/data; chown 472:472 /srv/docker/grafana/data
+  #     - ./srv/grafana/data:/var/lib/grafana
