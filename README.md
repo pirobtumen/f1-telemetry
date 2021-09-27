@@ -4,6 +4,8 @@ Tool for saving the F1 (2021) Game telemetry data.
 
 > Early stage project.
 
+![Telemetry dashboard](https://raw.githubusercontent.com/pirobtumen/f1-telemetry/main/dashboards/dashboard_example.PNG)
+
 ## Introduction
 
 I've been playing the F1 2021 Game this year, and I saw it sends telemetry data to an UDP host.
