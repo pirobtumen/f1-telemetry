@@ -1,9 +1,13 @@
 version: "3.9"
 services:
   f1-telemetry:
-    build: .
+    build: 
+      context: .
+      target: base
     env_file:
       - .env
+    volumes:
+      - .:/f1-telemetry
     ports:
       - "20777:20777"
   influxdb:

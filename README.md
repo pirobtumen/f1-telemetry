@@ -31,36 +31,25 @@ I haven't thought anymore really, so I'll be adding more features as I come up w
 
 ## Setup
 
-> You need Go and docker/docker-compose installed.
+> You need docker/docker-compose installed.
 
-Important note:
 
-Windows users: if you develop/try this in the same game that you play, Windows + WSL2 have problems with UDP conexions so I run the client without Docker. If you are a Linux user, you are free to go :D
-
-### Windows:
+> Windows: if you try to run this on Windows + WSL2, there are problems with UDP conexions so you need to run the project without Docker.
 
 In one terminal run:
 
 ```
-$ docker-compose up influxdb
+$ make start
 ```
 
-In another terminal run:
+You can check the logs running the command:
 
 ```
-$ cp .env.local .env
+$ make logs
 ```
 
 > You need to update your .env DB access config as explained previously.
 
-Finally, run the client:
-
-```
-$ go mod download
-$ go run main.go
-```
-
-### Linux
 
 ### Database / Charts
 
