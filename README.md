@@ -31,36 +31,26 @@ I haven't thought anymore really, so I'll be adding more features as I come up w
 
 ## Setup
 
-> You need Go and docker/docker-compose installed.
+> You need docker/docker-compose installed.
 
-Important note:
 
-Windows users: if you develop/try this in the same game that you play, Windows + WSL2 have problems with UDP conexions so I run the client without Docker. If you are a Linux user, you are free to go :D
+> Docker + UDP doesn't work properly. There are problems with UDP conexions so you need to run the server without Docker.
 
-### Windows:
-
-In one terminal run:
+In one terminal run this to initialize the environment:
 
 ```
-$ docker-compose up influxdb
+$ make start
 ```
 
-In another terminal run:
+Run server in development mode:
+
+> I use air for live reloading `go install github.com/cosmtrek/air@latest`.
+
+> You need to update your .env DB access config as explained in the next section.
 
 ```
-$ cp .env.local .env
+$ make dev
 ```
-
-> You need to update your .env DB access config as explained previously.
-
-Finally, run the client:
-
-```
-$ go mod download
-$ go run main.go
-```
-
-### Linux
 
 ### Database / Charts
 
