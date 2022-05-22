@@ -42,12 +42,17 @@ func main() {
 		}
 
 		telemetry, _ := pkg.ReadPacket(buf)
-		fmt.Println("NEW PACKET")
+		// fmt.Println("NEW PACKET")
+
 		switch telemetry.Type {
 		case pkg.PACKET_CAR_TELEMETRY:
+			// fmt.Println("CAR DATA")
 			pkg.SaveTelemetryCarData(api, telemetry.Data.(pkg.TelemetryCarData))
 		case pkg.PACKET_LAP_DATA:
+			// fmt.Println("LAP DATA")
 			pkg.SaveTelemetryLapData(api, telemetry.Data.(pkg.TelemetryLapData))
+			// default:
+			// 	fmt.Println("OTHER")
 		}
 	}
 }

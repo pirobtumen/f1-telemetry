@@ -27,7 +27,7 @@ type PacketHeader struct {
 
 func ReadPacket(buf []byte) (TelemetryPacket, error) {
 	header := PacketHeader{}
-	if err := readPacketHeader(buf, header); err != nil {
+	if err := readPacketHeader(buf, &header); err != nil {
 		return TelemetryPacket{}, err
 	}
 

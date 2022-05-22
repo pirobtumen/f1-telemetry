@@ -9,7 +9,7 @@ init: ## Load initial project setup
 	go mod download
 
 dev: ## Run app in development mode
-	go run cmd/main.go
+	~/go/bin/air -c air.toml -d
 
 ##@ Containers
 up: ## Run containers
@@ -20,9 +20,6 @@ down: ## Stop and delete containers and volumes
 
 stop: ## Stops container for database
 	docker-compose stop
-
-logs: ## Stops container for database
-	docker-compose logs -f f1-telemetry
 
 ##@ Helpers
 .PHONY: help

@@ -34,22 +34,23 @@ I haven't thought anymore really, so I'll be adding more features as I come up w
 > You need docker/docker-compose installed.
 
 
-> Windows: if you try to run this on Windows + WSL2, there are problems with UDP conexions so you need to run the project without Docker.
+> Docker + UDP doesn't work properly. There are problems with UDP conexions so you need to run the server without Docker.
 
-In one terminal run:
+In one terminal run this to initialize the environment:
 
 ```
 $ make start
 ```
 
-You can check the logs running the command:
+Run server in development mode:
+
+> I use air for live reloading `go install github.com/cosmtrek/air@latest`.
+
+> You need to update your .env DB access config as explained in the next section.
 
 ```
-$ make logs
+$ make dev
 ```
-
-> You need to update your .env DB access config as explained previously.
-
 
 ### Database / Charts
 
