@@ -2,7 +2,7 @@
 
 Tool for visualizing and storing real-time telemetry data for the F1 Game (2021). 
 
-> Early stage project.
+[You can read about the project in my blog post](https://www.pirobits.com/post/f1-telemetria-tiempo-real-golang-influxdb/).
 
 ![Telemetry dashboard](https://raw.githubusercontent.com/pirobtumen/f1-telemetry/main/dashboards/dashboard_example.PNG)
 
@@ -18,14 +18,15 @@ For the charts I've used the InfluxDB UI, that it's quite similar to Grafana. Th
 
 ## Roadmap
 
+- [ ] Full telemetry data support.
+- [ ] Parse all the relevant packages.
+- [ ] Custom UI
 - [x] Metrics: car speed, braking [0, 1], throttling [0, 1] and steering [-1, 1].
 - [x] Last lap time.
 - [x] Base dashboard with auto-updating (5s).
-- [ ] Custom UI
-- [ ] Real time UI updates.
-- [ ] Client live reload for development (air?).
-- [ ] Parse all the relevant packages.
-- [ ] Improve local development environment.
+- [X] Real time UI updates. => Chronograf now supports 1s update interval.
+- [x] Client live reload for development.
+- [x] Improve local development environment.
 
 I haven't thought anymore really, so I'll be adding more features as I come up with new ideas :D
 
